@@ -2,36 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arindam Bera</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arindam Bera | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2.5rem 3rem;
+      max-width: 500px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+    img.profile {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 1.5rem;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+      transition: transform 0.3s ease;
+    }
+    img.profile:hover {
+      transform: scale(1.05);
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+    }
+    p {
+      font-weight: 300;
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.5;
+      color: #dcd6f7;
+    }
+    a.button {
+      display: inline-block;
+      background-color: #fff;
+      color: #764ba2;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #5a3e9a;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="images/profile.jpeg" alt="Profile Photo" class="profile-pic" />
+  <div class="container">
+    <img src="images/profile.jpeg" alt="Arindam Bera" class="profile" />
     <h1>Arindam Bera</h1>
-    <p>Application Support Engineer | Tech Enthusiast | Vlogger</p>
-  </header>
-
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      I work in application support for a leading US retail client. I enjoy building helpful automations,
-      capturing travel moments, and showcasing miniature car collections.
-    </p>
-  </section>
-
-  <section class="links">
-    <h2>Connect with Me</h2>
-    <ul>
-      <li><a href="https://www.youtube.com/@yourchannel" target="_blank">YouTube</a></li>
-      <li><a href="https://www.linkedin.com/in/arindambera/" target="_blank">LinkedIn</a></li>
-      <li><a href="mailto:you@example.com">Email Me</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Arindam Bera</p>
-  </footer>
+    <p>Welcome to my portfolio site! I'm passionate about web development, design, and building awesome projects.</p>
+    <a href="https://github.com/arindambera" target="_blank" class="button" rel="noopener noreferrer">Visit my GitHub</a>
+  </div>
 </body>
 </html>
