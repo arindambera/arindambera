@@ -23,6 +23,11 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }
     body {
       font-family: "Poppins", sans-serif;
       background: linear-gradient(135deg, #667eea, #764ba2);
@@ -33,7 +38,7 @@
       justify-content: center;
       padding: 2rem;
       text-align: center;
-      overflow: hidden;
+      overflow-y: auto;
       position: relative;
     }
 
@@ -50,7 +55,7 @@
     }
     /* Cars container */
     .cars-bg {
-      position: fixed;
+      position: absolute; /* changed from fixed to absolute */
       top: 0;
       left: 0;
       width: 100vw;
@@ -133,6 +138,7 @@
       border-radius: 16px;
       padding: 2.5rem 3rem;
       max-width: 700px;
+      width: 100%; /* allow responsive shrink on small screens */
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
       position: relative;
@@ -211,10 +217,10 @@
   </div>
 
   <div class="container">
-    <img src="images/profile.jpeg" alt="Arindam Bera" class="profile" />
+    <img src="images/profile.jpg" alt="Arindam Bera" class="profile" />
     <h1>Arindam Bera</h1>
     <p>
-      Welcome to My Site. I'm currently working as a Software Engineering Consultant / Team Lead working at Accenture, having an experience of 8+ Years of ears of developing and managing applications, automations and operations for one of the biggest multinational consumer electronics retailer client in the USA. 
+      Welcome to My Site. I'm currently working as a Software Engineering Consultant / Team Lead working at Accenture, having an experience of 8+ Years of ears of developing and managing applications, automations and operations for one of the biggest multinational consumer electronics retailer client in the USA.
     </p>
     <div class="btn-row">
       <a
@@ -239,7 +245,7 @@
         ><i class="fab fa-facebook-f fa-lg"></i> Visit My Facebook</a
       >
       <a
-        href="https://www.youtube.com/@arindambera2494"
+        href="https://youtube.com/arindambera2494"
         target="_blank"
         class="button"
         rel="noopener noreferrer"
@@ -255,7 +261,7 @@
     </div>
     <div class="email-container">
       <a href="mailto:hi@arindambera.com" class="email-button"
-        ><i class="fas fa-envelope fa-lg"></i> Email Me</a
+        ><i class="fas fa-envelope fa-lg"></i> Contact Me via Email</a
       >
     </div>
   </div>
