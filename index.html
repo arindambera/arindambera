@@ -1,269 +1,58 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arindam Bera | Portfolio</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
-    rel="stylesheet"
-  />
-  <!-- Font Awesome for social icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pVf+OGaO1cS73BZ7HsOl6oJK06sA3ZP6Ax6yNQy8OeqjR1fqQmHkN82yw6T6I9xqvLjCipD+oszj3Gz8+jKgog=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <style>
-    /* Reset and base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html, body {
-      height: 100%;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-    }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      overflow-y: auto;
-      position: relative;
-    }
-
-    /* Car-themed animated background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      z-index: 0;
-    }
-    /* Cars container */
-    .cars-bg {
-      position: absolute; /* changed from fixed to absolute */
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-      overflow: visible;
-    }
-    .car {
-      position: absolute;
-      width: 60px;
-      height: 30px;
-      background: #fff;
-      border-radius: 15px 15px 10px 10px;
-      box-shadow: inset -8px 0 10px #aaa;
-      filter: drop-shadow(0 0 2px rgba(255 255 255 / 0.7));
-      animation-timing-function: linear;
-      opacity: 0.15;
-    }
-    /* Wheels */
-    .car::before,
-    .car::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      width: 16px;
-      height: 16px;
-      background: radial-gradient(circle at center, #333 60%, #000);
-      border-radius: 50%;
-      box-shadow: 0 0 6px #222 inset;
-    }
-    .car::before {
-      left: 8px;
-    }
-    .car::after {
-      right: 8px;
-    }
-    /* Animate cars horizontally across screen at different speeds */
-    .car1 {
-      top: 20%;
-      left: -80px;
-      animation: drive 20s linear infinite;
-      animation-delay: 0s;
-      opacity: 0.2;
-      transform: scale(1.1);
-    }
-    .car2 {
-      top: 50%;
-      left: -120px;
-      animation: drive 28s linear infinite;
-      animation-delay: 8s;
-      opacity: 0.15;
-      transform: scale(0.9);
-    }
-    .car3 {
-      top: 80%;
-      left: -100px;
-      animation: drive 25s linear infinite;
-      animation-delay: 4s;
-      opacity: 0.1;
-      transform: scale(1.3);
-    }
-
-    @keyframes drive {
-      0% {
-        transform: translateX(0) scaleX(1);
-        opacity: 0.15;
-      }
-      50% {
-        opacity: 0.25;
-      }
-      100% {
-        transform: translateX(120vw) scaleX(1);
-        opacity: 0.15;
-      }
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 2.5rem 3rem;
-      max-width: 700px;
-      width: 100%; /* allow responsive shrink on small screens */
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      position: relative;
-      z-index: 1;
-    }
-    img.profile {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 1.5rem;
-      object-fit: cover;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-      transition: transform 0.3s ease;
-    }
-    img.profile:hover {
-      transform: scale(1.05);
-    }
-    h1 {
-      font-weight: 600;
-      font-size: 2.2rem;
-      margin-bottom: 0.3rem;
-    }
-    p {
-      font-weight: 300;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      line-height: 1.5;
-      color: #dcd6f7;
-    }
-
-    /* Buttons container */
-    .btn-row {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: nowrap;
-      flex-wrap: wrap; /* fallback for smaller screens */
-      margin-bottom: 1.8rem;
-    }
-
-    a.button,
-    a.email-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background-color: #fff;
-      color: #764ba2;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 0.75rem 1.8rem;
-      border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
-      transition: background-color 0.3s ease, color 0.3s ease;
-      font-size: 1rem;
-      user-select: none;
-    }
-    a.button:hover,
-    a.email-button:hover {
-      background-color: #5a3e9a;
-      color: #fff;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Email button separate and centered */
-    .email-container {
-      margin-top: 0.8rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="cars-bg" aria-hidden="true">
-    <div class="car car1"></div>
-    <div class="car car2"></div>
-    <div class="car car3"></div>
-  </div>
+  <header class="hero">
+    <nav class="navbar">
+      <h1 class="logo">Arindam Bera</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h2>Hi, I'm Arindam 👋</h2>
+      <p>Software Engineer | .NET Developer | Tech Enthusiast</p>
+    </div>
+  </header>
 
-  <div class="container">
-    <img src="images/profile.jpeg" alt="Arindam Bera" class="profile" />
-    <h1>Arindam Bera</h1>
-    <p>
-      Welcome to My Site. I'm currently working as a Software Engineering Consultant / Team Lead working at Accenture, having an experience of 8+ Years of ears of developing and managing applications, automations and operations for one of the biggest multinational consumer electronics retailer client in the USA.
-    </p>
-    <div class="btn-row">
-      <a
-        href="https://github.com/arindambera"
-        target="_blank"
-        class="button"
-        rel="noopener noreferrer"
-        ><i class="fab fa-github fa-lg"></i> Visit My GitHub</a
-      >
-      <a
-        href="https://instagram.com/arindambera"
-        target="_blank"
-        class="button"
-        rel="noopener noreferrer"
-        ><i class="fab fa-instagram fa-lg"></i> Visit My Instagram</a
-      >
-      <a
-        href="https://facebook.com/arindam.bera2"
-        target="_blank"
-        class="button"
-        rel="noopener noreferrer"
-        ><i class="fab fa-facebook-f fa-lg"></i> Visit My Facebook</a
-      >
-      <a
-        href="https://youtube.com/arindambera2494"
-        target="_blank"
-        class="button"
-        rel="noopener noreferrer"
-        ><i class="fab fa-youtube fa-lg"></i> Visit My YouTube</a
-      >
-      <a
-        href="https://linkedin.com/in/arindambera1"
-        target="_blank"
-        class="button"
-        rel="noopener noreferrer"
-        ><i class="fab fa-linkedin-in fa-lg"></i> Visit My LinkedIn</a
-      >
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am a software engineering team lead at Accenture with 8+ years of experience in .NET, SQL, and web development. Passionate about learning mobile development and building user-centric applications.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>Built this personal portfolio using HTML, CSS, and JavaScript. Deployed via GitHub Pages at <a href="https://arindambera.com" target="_blank">arindambera.com</a>.</p>
+      </div>
+      <div class="project">
+        <h3>ConfiForms Automation</h3>
+        <p>Automated data workflows in Confluence using ConfiForms, improving data reliability and workflow efficiency.</p>
+      </div>
     </div>
-    <div class="email-container">
-      <a href="mailto:hi@arindambera.com" class="email-button"
-        ><i class="fas fa-envelope fa-lg"></i> Contact Me via Email</a
-      >
-    </div>
-  </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: arindam@example.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/arindambera" target="_blank">linkedin.com/in/arindambera</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Arindam Bera. All rights reserved.</p>
+  </footer>
 </body>
 </html>
