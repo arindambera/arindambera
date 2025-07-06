@@ -114,6 +114,13 @@
   </style>
 </head>
 <body>
+  <div id="login-screen" style="position: absolute; background: rgba(0,0,0,0.85); width: 100vw; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999;">
+    <h2 style="margin-bottom: 20px;">Login Required</h2>
+    <input type="text" id="username" placeholder="Username" style="padding: 10px; margin: 5px; width: 200px;" />
+    <input type="password" id="password" placeholder="Password" style="padding: 10px; margin: 5px; width: 200px;" />
+    <button onclick="validateLogin()" style="padding: 10px 20px; margin-top: 10px;">Login</button>
+    <p id="login-error" style="color: red; margin-top: 10px;"></p>
+  </div>
   <h1>Live Clock & Date</h1>
   <div class="clock-container">
     <div class="hand hour" id="hour-hand"></div>
@@ -144,6 +151,16 @@
 
     setInterval(updateClock, 1000);
     updateClock();
-  </script>
+  
+    function validateLogin() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if (user === 'admin' && pass === 'admin') {
+        document.getElementById('login-screen').style.display = 'none';
+      } else {
+        document.getElementById('login-error').textContent = 'Invalid username or password.';
+      }
+    }
+    </script>
 </body>
 </html>
