@@ -1,47 +1,131 @@
+/* style.css */
 body {
-  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #121212;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00c2ff;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(145deg, #1a1a1a, #101010);
   text-align: center;
+  padding: 0 1rem;
 }
 
-header {
-  background-color: #222;
-  color: white;
-  padding: 2rem 1rem;
-}
-
-.profile-pic {
-  width: 150px;
-  border-radius: 50%;
+.hero-content h2 {
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.about, .links {
-  padding: 2rem 1rem;
-  max-width: 700px;
-  margin: auto;
+.hero-content p {
+  font-size: 1.2rem;
+  color: #cccccc;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+/* About Section */
+.about {
+  padding: 4rem 2rem;
+  background-color: #181818;
+  text-align: center;
 }
 
-a {
-  color: #007acc;
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Projects Section */
+.projects {
+  padding: 4rem 2rem;
+  background-color: #121212;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project h3 {
+  margin-top: 0;
+  color: #00c2ff;
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 2rem;
+  background-color: #181818;
+  text-align: center;
+}
+
+.contact a {
+  color: #00c2ff;
   text-decoration: none;
-  font-weight: bold;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
+/* Footer */
 footer {
-  background: #222;
-  color: #aaa;
+  text-align: center;
   padding: 1rem;
+  background-color: #0f0f0f;
+  color: #999;
   font-size: 0.9rem;
 }
